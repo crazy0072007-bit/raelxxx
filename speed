@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- META TAGS PARA O GOOGLE (SEO) -->
+    <meta name="description" content="Otimização de PC com planos a partir de R$19,90. Melhore o desempenho do seu computador com RAELXX. Limpeza, registro, placa de vídeo e muito mais!">
+    <meta name="keywords" content="otimização de pc, limpeza de pc, aumentar fps, placa de vídeo, desempenho, raelxx">
+    <meta name="author" content="RAELXX">
+    <meta name="robots" content="index, follow">
+    
+    <title>RAELXX - Otimização de PC | Aumente o desempenho</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(0,255,255,0.5);
+        }
+
+        .header h1 span {
+            color: #0ff;
+        }
+
+        .header p {
+            color: #ccc;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(0,255,255,0.2);
+            border: 1px solid #0ff;
+            border-radius: 50px;
+            padding: 8px 20px;
+            color: #0ff;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        /* Planos */
+        .planos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 30px 25px;
+            width: 320px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border-color: rgba(0,255,255,0.3);
+        }
+
+        .popular {
+            border: 2px solid #ff6b6b;
+            box-shadow: 0 0 30px rgba(255,107,107,0.3);
+        }
+
+        .popular::before {
+            content: "⭐ MAIS VENDIDO";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8em;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .card h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .preco {
+            font-size: 3em;
+            font-weight: bold;
+            color: #0ff;
+            margin: 20px 0;
+        }
+
+        .preco span {
+            font-size: 0.5em;
+            color: #aaa;
+        }
+
+        .descricao {
+            color: #ccc;
+            line-height: 1.6;
+            margin: 20px 0;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .descricao li {
+            margin: 10px 0;
+            list-style: none;
+            position: relative;
+        }
+
+        .descricao li::before {
+            content: "✅";
+            position: absolute;
+            left: -25px;
+        }
+
+        /* Botões */
+        .btn-group {
+            margin-top: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+            transition: all 0.3s;
+            font-size: 0.9em;
+        }
+
+        .btn-wpp {
+            background: #25D366;
+            color: white;
+            border: none;
+        }
+
+        .btn-wpp:hover {
+            background: #128C7E;
+            transform: scale(1.05);
+        }
+
+        .btn-discord {
+            background: #5865F2;
+            color: white;
+        }
+
+        .btn-discord:hover {
+            background: #4752c4;
+            transform: scale(1.05);
+        }
+
+        /* Seção de contato */
+        .contato {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 30px;
+        }
+
+        .contato h3 {
+            color: #fff;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .contato p {
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .contato-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contato-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.1);
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .contato-link:hover {
+            transform: scale(1.05);
+        }
+
+        .contato-link.wpp {
+            background: #25D366;
+        }
+
+        .contato-link.discord {
+            background: #5865F2;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #666;
+            font-size: 0.8em;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            .card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>⚡ <span>RAELXX</span> OTIMIZADOR</h1>
+            <p>Seu PC merece performance de verdade</p>
+            <div class="badge">🎮 +30% de desempenho garantido | RAELXX</div>
+        </div>
+
+        <!-- Planos -->
+        <div class="planos">
+            <!-- Plano 1 - Básico -->
+            <div class="card">
+                <h2>🚀 BÁSICO</h2>
+                <div class="preco">R$ 19,90<span>/único</span></div>
+                <ul class="descricao">
+                    <li>Limpeza de arquivos temporários</li>
+                    <li>Otimização de inicialização</li>
+                    <li>Desfragmentação de disco</li>
+                    <li>Remoção de bloatware</li>
+                    <li>Suporte por 7 dias</li>
+                </ul>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-wpp" onclick="comprarWhatsApp('Básico', 19.90)">📱 WhatsApp</a>
+                    <a href="#" class="btn btn-discord" onclick="comprarDiscord('Básico', 19.90)">💬 Discord</a>
+                </div>
+            </div>
+
+            <!-- Plano 2 - Avançado (MAIS VENDIDO) -->
+            <div class="card popular">
+                <h2>🔥 AVANÇADO</h2>
+                <div class="preco">R$ 39,90<span>/único</span></div>
+                <ul class="descricao">
+                    <li>Tudo do plano BÁSICO</li>
+                    <li>Otimização de registro (Registry)</li>
+                    <li>Priorização de processos</li>
+                    <li>Otimização de rede (ping reduzido)</li>
+                    <li>Suporte por 30 dias</li>
+                </ul>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-wpp" onclick="comprarWhatsApp('Avançado', 39.90)">📱 WhatsApp</a>
+                    <a href="#" class="btn btn-discord" onclick="comprarDiscord('Avançado', 39.90)">💬 Discord</a>
+                </div>
+            </div>
+
+            <!-- Plano 3 - Completo (Placa de Vídeo) -->
+            <div class="card">
+                <h2>💎 COMPLETO</h2>
+                <div class="preco">R$ 59,90<span>/único</span></div>
+                <ul class="descricao">
+                    <li>Tudo do plano AVANÇADO</li>
+                    <li>⭐ OTIMIZAÇÃO DE PLACA DE VÍDEO</li>
+                    <li>Overclock seguro (GPU/CPU)</li>
+                    <li>Configuração de drivers otimizados</li>
+                    <li>Aumento de FPS em jogos</li>
+                    <li>Suporte vitalício</li>
+                </ul>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-wpp" onclick="comprarWhatsApp('Completo + Placa de Vídeo', 59.90)">📱 WhatsApp</a>
+                    <a href="#" class="btn btn-discord" onclick="comprarDiscord('Completo + Placa de Vídeo', 59.90)">💬 Discord</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção de contato direto -->
+        <div class="contato">
+            <h3>📞 Entre em contato com RAELXX</h3>
+            <p>Escolha sua plataforma favorita para comprar ou tirar dúvidas</p>
+            <div class="contato-links">
+                <a href="#" id="whatsappDireto" class="contato-link wpp">
+                    📱 WhatsApp - (47) 98468-0661
+                </a>
+                <a href="#" id="discordDireto" class="contato-link discord">
+                    💬 Discord - Clique aqui
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>⚡ RAELXX Otimizador | Performance garantida ou seu dinheiro de volta</p>
+            <p>Formas de pagamento: PIX, Cartão de Crédito, Boleto</p>
+        </div>
+    </div>
+
+    <script>
+        // Números e links para contato 
+        const NUMERO_WHATSAPP = "5547984680661";
+        const LINK_DISCORD = "https://discord.gg/Dajstore";
+        
+        // Comprar via WhatsApp
+        function comprarWhatsApp(plano, preco) {
+            const mensagem = `Olá, RAELXX! Gostaria de comprar o plano *${plano}* por *R$ ${preco.toFixed(2)}*.\n\n✅ Quero otimizar meu PC hoje mesmo!`;
+            const url = `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+            return false;
+        }
+        
+        // Comprar via Discord
+        function comprarDiscord(plano, preco) {
+            const mensagem = `Olá, RAELXX! Gostaria de comprar o plano *${plano}* por *R$ ${preco.toFixed(2)}*.\n\nQuero realizar a compra!`;
+            window.open(LINK_DISCORD, '_blank');
+            setTimeout(() => {
+                alert(`💬 Entre no Discord da RAELXX e mande mensagem\n\nLink: ${LINK_DISCORD}\n\nMensagem:\n${mensagem}`);
+            }, 500);
+            return false;
+        }
+        
+        // Links diretos
+        document.getElementById('whatsappDireto').addEventListener('click', function(e) {
+            e.preventDefault();
+            const mensagem = `Olá, RAELXX! Gostaria de mais informações sobre as otimizações.`;
+            const url = `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        });
+        
+        document.getElementById('discordDireto').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open(LINK_DISCORD, '_blank');
+            alert(`💬 Servidor Discord RAELXX: ${LINK_DISCORD}\n\nEntre e chame no privado!`);
+        });
+    </script>
+</body>
+</html>
